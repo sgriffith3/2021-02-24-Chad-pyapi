@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<HTML>
+<body>
+<h1>
+Here are the hosts</h1> <br>
+
+{% for item in groups %}<ul>{{ item.ip }} {{ item.fqdn }} # {{ item.hostname }}</ul>{% endfor %}
+
+<form action = "/add_ip" method="post">
+    Hostname <input type="text" name="hostname"/><br>
+    IP <input type="text" name="ip"/><br>
+    FQDN <input type="text" name="fqdn"/><br>
+    <input type="submit" value="Add Host"/>
+</form>
+</body>
+</HTML>
