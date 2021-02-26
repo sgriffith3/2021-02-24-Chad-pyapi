@@ -45,7 +45,7 @@ def gimme_excel():
     j_df = pd.DataFrame(j_data)
     f_name = f"{random.randint(1,1000000)}.xlsx"
     j_df.to_excel(f"docs/{f_name}")
-    return f'<h1>Download Your New File Here:<h1><br><a href="/docs/{f_name}>/docs/{f_name}</a>'
+    return f'<h1>Download Your New File Here:<h1><br><a href="/docs/{f_name}">/docs/{f_name}</a>'
 
 
 @app.route("/docs/<filename>")
