@@ -44,14 +44,14 @@ def gimme_excel():
     j_data = request.json
     j_df = pd.DataFrame(j_data)
     f_name = f"{random.randint(1,1000000)}.xlsx"
-    j_df.to_excel(f_name)
+    j_df.to_excel(f"docs/{f_name}")
     return f'<h1>Download Your New File Here:<h1><br><a href="/docs/{f_name}>/docs/{f_name}</a>'
 
 
 @app.route("/docs/<filename>")
 def download_doc(filename):
     docs_dir = os.path.join(os.getcwd(), "docs")
-    return send_file(filename)
+    return send_file(f"{docs_dir}/{filename}")
 
 
 if __name__ == "__main__":
